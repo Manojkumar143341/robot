@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Robot </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: 50px auto;
+      text-align: center;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    .select-options {
+      margin-bottom: 20px;
+    }
+    .select-options select {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e7f5ff;
+      border: 1px solid #cce4ff;
+      border-radius: 5px;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>AI Robot Builder</h1>
+    
+    <div class="select-options">
+      <label for="robot-type">Select Robot Type:</label>
+      <select id="robot-type">
+        <option value="humanoid">Humanoid</option>
+        <option value="android">Android</option>
+        <option value="drone">Drone</option>
+      </select>
+      
+      <label for="task">Select Robot Task:</label>
+      <select id="task">
+        <option value="assistant">Personal Assistant</option>
+        <option value="chef">Cooking</option>
+        <option value="explorer">Exploration</option>
+      </select>
+      
+      <label for="ai-level">AI Level:</label>
+      <select id="ai-level">
+        <option value="basic">Basic</option>
+        <option value="advanced">Advanced</option>
+        <option value="super">Super AI</option>
+      </select>
+    </div>
+
+    <button class="btn" onclick="buildRobot()">Build My Robot</button>
+
+    <div class="result" id="result">
+      <!-- The result will be shown here -->
+    </div>
+  </div>
+
+  <script>
+    function buildRobot() {
+      const robotType = document.getElementById('robot-type').value;
+      const task = document.getElementById('task').value;
+      const aiLevel = document.getElementById('ai-level').value;
+
+      const robotDescription = `Your robot is a ${robotType} designed for ${task} tasks with ${aiLevel} AI capabilities.`;
+
+      document.getElementById('result').innerHTML = robotDescription;
+    }
+  </script>
+  
+</body>
+</html>
